@@ -47,6 +47,18 @@
             "CityName": "Oslo",
             "Temp": "-3.9",
             "Status": "Clear"
+        },
+        {
+            "CityCode": "5128581",
+            "CityName": "New York",
+            "Temp": "0",
+            "Status": "Clear"
+        },
+        {
+            "CityCode": "360630",
+            "CityName": "Cairo",
+            "Temp": "0",
+            "Status": "Clear"
         }
     ]
 }

@@ -73,6 +73,9 @@ namespace backend.Controllers
                         var result = new WeatherAnalyticsDto
                         {
                             CityName = city.CityName,
+                            WeatherDescription = weather.Weather.Count > 0
+                            ? weather.Weather[0].Description
+                            : "Unknown",
                             Temperature = weather.Main.Temp,
                             FeelsLike = weather.Main.FeelsLike,
                             Humidity = weather.Main.Humidity,
