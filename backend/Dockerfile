@@ -8,7 +8,7 @@ RUN dotnet restore
 
 COPY . .
 
-RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish backend.csproj -c Release -o /app/publish /p:UseAppHost=false
 
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
