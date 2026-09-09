@@ -13,7 +13,7 @@ builder.Services.AddScoped<IweatherService, WeatherService>();
 builder.Services.AddScoped<ICityService, CityService>();
 builder.Services.AddScoped<IcomfortIndexService, ComfortIndexService>();
 
-// CORS - Allow React frontend
+// CORS - Allow React frontend during local development
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("ReactApp", policy =>
@@ -47,6 +47,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// Serve React frontend files from wwwroot
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 // CORS
 app.UseCors("ReactApp");
 
@@ -54,6 +58,10 @@ app.UseCors("ReactApp");
 app.UseAuthentication();
 app.UseAuthorization();
 
+// API controllers
 app.MapControllers();
+
+// React SPA fallback
+app.MapFallbackToFile("index.html");
 
 app.Run();

@@ -31,7 +31,9 @@ function App() {
     const [searchTerm, setSearchTerm] = useState("");
     const [sortBy, setSortBy] = useState("rank");
 
-    const API_URL = "https://localhost:7202";
+    const API_URL = import.meta.env.PROD
+        ? window.location.origin
+        : "https://localhost:7202";
 
     // -------------------------------
     // Theme Toggle

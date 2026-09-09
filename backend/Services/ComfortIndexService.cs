@@ -24,7 +24,7 @@ namespace backend.Services
             double difference = Math.Abs(temperature - 22);
 
             double score = 100 - (difference * 5);
-
+            
             return Math.Clamp(score, 0, 100);
         }
 
@@ -54,5 +54,7 @@ namespace backend.Services
 
             return Math.Clamp(score, 0, 100);
         }
+
     }
+
 }
