@@ -45,8 +45,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
 // Serve React frontend files from wwwroot
 app.UseDefaultFiles();
 app.UseStaticFiles();
